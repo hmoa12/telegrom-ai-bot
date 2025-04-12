@@ -1,8 +1,12 @@
 import dotenv from "dotenv";
 import TelegramBot from "node-telegram-bot-api";
 import OpenAI from "openai";
+import express from "express";
 
 dotenv.config();
+
+const app = express();
+const port = process.env.PORT || 3000;
 
 const bot = new TelegramBot(process.env.TELEGRAM_BOT_TOKEN!, { polling: true });
 
